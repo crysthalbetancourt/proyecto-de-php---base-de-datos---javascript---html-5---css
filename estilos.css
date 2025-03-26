@@ -1,0 +1,180 @@
+/* ===== VARIABLES CSS ===== */
+:root {
+    --color-fondo: #ffefdd;
+    --color-primario: #d2ac7f;
+    --color-texto:black;
+    --color-boton-wpp: #d2ac7f;
+    --fuente-principal: Arial, sans-serif;
+}
+/* ===== ESTILOS GENERALES ===== */
+body {
+    font-family: var(--fuente-principal);
+    margin: 0;
+    padding: 0;
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+}
+
+header {
+    background-color: var(--color-fondo);
+    padding: 20px;
+    text-align: center;
+}
+
+h1 {
+    margin: 0;
+}
+
+body {
+    font-family:var(--fuente-principal);
+}
+.menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    background-color:var(--color-primario);
+}
+.menu li {
+    position: relative;
+    display: inline-block;
+}
+.menu li a {
+    display: block;
+    padding: 15px 20px;
+    color: white;
+    text-decoration: none;
+}
+.menu li a:hover {
+    background-color:var(--color-primario);
+}
+.submenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: var(--color-boton-wpp);
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.submenu li {
+    display: block;
+}
+.submenu li a {
+    padding: 10px 20px;
+}
+.menu li:hover .submenu {
+    display: block;
+}
+
+/* ===== SECCIÓN DE CONTENIDO ===== */
+.contenido {
+    padding: 20px;
+    text-align: center;
+    justify-content: center;
+}
+
+/* ===== GALERÍA DE IMÁGENES (CSS GRID) ===== */
+.galeria {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 10px;
+    padding: 20px;
+}
+
+.galeria img {
+    width: 50%;
+    border-radius: 5px;
+    object-fit: cover;
+}
+
+/* ===== SECCIÓN DE SERVICIOS (GRID) ===== */
+.servicios {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    justify-content: center;
+}
+
+.card {
+    background-color: var(--color-secundario);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.card img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+/* ===== BOTÓN DE WHATSAPP ===== */
+.whatsapp-btn {
+    background-color: var(--color-boton-wpp);
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* ===== FORMULARIO DE CONTACTO ===== */
+.formulario-contacto {
+    max-width: 400px;
+    margin: auto;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    color: black;
+}
+
+input, textarea, button {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px;
+}
+
+
+
+/* ===== MEDIA QUERIES - RESPONSIVO ===== */
+@media (max-width: 768px) {
+    nav ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .galeria {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+
+    .servicios {
+        grid-template-columns: 1fr ;
+    }
+
+    .formulario-contacto {
+        width: 90%;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        padding: 10px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        padding: 0;
+    }
+
+    .whatsapp-btn {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    .formulario-contacto {
+        width: 100%;
+    }
+}
